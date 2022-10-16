@@ -1,0 +1,25 @@
+{
+  "country": [
+    {
+      "country_id": "CH",
+      "probability": 0.068
+    },
+    {
+      "country_id": "RU",
+      "probability": 0.054
+    },
+    {
+      "country_id": "BE",
+      "probability": 0.052
+    },
+    {
+      "country_id": "AT",
+      "probability": 0.045
+    },
+    {
+      "country_id": "NL",
+      "probability": 0.044
+    }
+  ],
+  "name": "test"
+}

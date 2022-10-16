@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{083a27c1-b4a7-4dcb-8461-f6d815b5e00e}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -16,7 +16,7 @@
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
@@ -25,6 +25,7 @@
     <PermissionSet>EXTERNAL_ACCESS</PermissionSet>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Demo.SQLCLR.ApiCall.key.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -59,17 +60,59 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Code" />
+    <Folder Include="Code\Interfaces" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Code\Implementation" />
+    <Folder Include="Code\Entities" />
+    <Folder Include="Scripts" />
+    <Folder Include="Code\Extensions" />
+    <Folder Include="Code\Exceptions" />
+    <Folder Include="Code\Common" />
+    <Folder Include="Code\External" />
+    <Folder Include="Code\External\LitJson" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Code\Interfaces\IConfiguration.cs" />
+    <Compile Include="StoredProcedures\NationalizeName.cs" />
+    <Compile Include="Code\Interfaces\INationalizeApiCaller.cs" />
+    <Compile Include="Code\Implementation\NationalizeHttpApiCaller.cs" />
+    <Compile Include="Code\Interfaces\INationalizeHttpApiResponseParser.cs" />
+    <Compile Include="Code\Entities\NationalizeResponse.cs" />
+    <Compile Include="Code\Extensions\ConversionExtensions.cs" />
+    <Compile Include="Code\Implementation\NationalizeHttpApiResponseParser.cs" />
+    <Compile Include="Code\Common\Ensure.cs" />
+    <Compile Include="Code\Exceptions\NationalizeReponseException.cs" />
+    <Compile Include="Code\External\LitJson\IJsonWrapper.cs" />
+    <Compile Include="Code\External\LitJson\JsonData.cs" />
+    <Compile Include="Code\External\LitJson\JsonException.cs" />
+    <Compile Include="Code\External\LitJson\JsonMapper.cs" />
+    <Compile Include="Code\External\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="Code\External\LitJson\JsonReader.cs" />
+    <Compile Include="Code\External\LitJson\JsonWriter.cs" />
+    <Compile Include="Code\External\LitJson\Lexer.cs" />
+    <Compile Include="Code\External\LitJson\Netstandard15Polyfill.cs" />
+    <Compile Include="Code\External\LitJson\ParserToken.cs" />
+    <Compile Include="Code\Implementation\DatabaseConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Demo.SQLCLR.ApiCall.key.snk" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Demo.SQLCLR.ApiCall.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="ConfigurationParameter.sql" />
+    <None Include="Scripts\CreateAssemblyLoginAndKey.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

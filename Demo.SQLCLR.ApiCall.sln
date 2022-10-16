@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Demo.SQLCLR.ApiCall", "Demo.SQLCLR.ApiCall\Demo.SQLCLR.ApiCall.sqlproj", "{083A27C1-B4A7-4DCB-8461-F6D815B5E00E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.SQLCLR.ApiCall.Tests.Integration", "Demo.SQLCLR.ApiCall.Tests.Integration\Demo.SQLCLR.ApiCall.Tests.Integration.csproj", "{80877738-F87D-4D4F-BBFA-8E7FC35E5DB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.SQLCLR.ApiCall.Tests.Unit", "Demo.SQLCLR.ApiCall.Tests.Unit\Demo.SQLCLR.ApiCall.Tests.Unit.csproj", "{1411DD0B-5C7F-4BE6-A230-EAC087165396}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{083A27C1-B4A7-4DCB-8461-F6D815B5E00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{083A27C1-B4A7-4DCB-8461-F6D815B5E00E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{083A27C1-B4A7-4DCB-8461-F6D815B5E00E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{80877738-F87D-4D4F-BBFA-8E7FC35E5DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80877738-F87D-4D4F-BBFA-8E7FC35E5DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80877738-F87D-4D4F-BBFA-8E7FC35E5DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80877738-F87D-4D4F-BBFA-8E7FC35E5DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1411DD0B-5C7F-4BE6-A230-EAC087165396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1411DD0B-5C7F-4BE6-A230-EAC087165396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1411DD0B-5C7F-4BE6-A230-EAC087165396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1411DD0B-5C7F-4BE6-A230-EAC087165396}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
