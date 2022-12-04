@@ -16,3 +16,40 @@ To avoid loading any extra .NET assemblies the following was done:
 
 - [WebClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netframework-4.5) was used instead of [HttpClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netframework-4.5) to call the API
 - [LitJson](https://github.com/LitJSON/litjson) was used to parse the JSON response (LitJson classes that would require reflection have been removed)
+
+#### Examples
+1. Predict nationality for name **Georgios**
+
+    EXEC [dbo].[NationalizeName] @name = N'Georgios'
+
+    | CountryCode |	 Probability |
+    | ----------- | -----------  |
+    | GR          | 0.782        |
+    | CY          |	0.078        |
+    | DE	      | 0.021        |
+    | SE	      | 0.013        |
+    | CH          | 0.01         |
+
+2. Predict nationality for name **Anders**
+
+    EXEC [dbo].[NationalizeName] @name = N'Anders'
+
+    | CountryCode |	Probability |
+    | ----------- | ----------- |
+    | SE          |	0.434       |
+    | DK          |	0.295       |
+    | MQ          |	0.183       |
+    | NO	      | 0.03        |
+    | FI	      | 0.019       |
+
+3. Predict nationality for name **Lyudmila**
+
+    EXEC [dbo].[NationalizeName] @name = N'Lyudmila'
+
+    |CountryCode  |	Probability |
+    | ----------- | ----------- |
+    |UA	          | 0.363       |
+    |RU	          | 0.219       |
+    |BG	          | 0.11        |
+    |KZ	          | 0.099       |
+    |BY	          | 0.046       |
